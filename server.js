@@ -8,7 +8,7 @@ if (!process.env.NODE_ENV) {
   console.error("Missing environment variable NODE_ENV!");
   process.exit(1);
 }
-console.info("CallMeBack System - NODE_ENV: " + process.env.NODE_ENV);
+console.info("Shiva System - NODE_ENV: " + process.env.NODE_ENV);
 if (process.env.NODE_ENV == "dev") {
   console.info("dev environment, sourcing params from ./dev.env");
   require('dotenv').config({

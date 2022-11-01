@@ -16,7 +16,7 @@ export class App {
       return { route: 'not-found', moduleId: PLATFORM.moduleName('misc/not-found/index'), title: 'Not found', settings: { auth: false } };
     }
 
-    config.title = 'CallMeBack';
+    config.title = 'Shiva';
     config.options.pushState = true;
     config.options.root = '/';
     config.map([
