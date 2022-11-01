@@ -1,0 +1,82 @@
+<template>
+
+  <div class="container">
+
+    <div class="block">
+      <h1 class="title">
+        Questo e' uno scadenziario
+      </h1>
+      <p class="subtitle">
+        Qui sotto trovi elencate tutte le tue scadenze
+      </p>
+    </div>
+
+    <div class="block">
+
+      <table class="table is-fullwidth">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Azioni</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr repeat.for="schedule of schedules">
+            <td>${schedule.name}</td>
+            <td>
+              <button class="button is-danger is-outlined is-small" click.delegate="delete(schedule)">
+                <span>Rimuovi</span>
+              </button>
+            </td>
+          </tr>
+
+          <!-- new line -->
+          <tr if.bind="editingIndex == -1">
+            <td>
+              <div>
+                <input class="input" type="text" value.bind="editingEntry.name">
+              </div>
+            </td>
+
+            <td>
+              <!-- save -->
+              <button class="button is-info is-small is-outlined" click.delegate="saveNew()">
+                <span>Salva</span>
+                <span class="icon">
+                  <font-awesome-icon icon="check"></font-awesome-icon>
+                </span>
+              </button>
+  
+              <!-- cancel -->
+              <button class="button is-danger is-small is-outlined" click.delegate="cancelNew()">
+                <span>Annulla</span>
+                <span class="icon">
+                  <font-awesome-icon icon="xmark"></font-awesome-icon>
+                </span>
+              </button>
+            </td>
+  
+          </tr>
+
+          <tr if.bind="!editingIndex">
+            <td colspan="2">
+
+              <div class="field is-grouped">
+                <div>
+                  <button class="button is-info is-small is-outlined" click.delegate="newEntry()">
+                    <span>Nuovo</span>
+                  </button>
+                </div>
+
+              </div>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+</template>

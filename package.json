@@ -1,0 +1,26 @@
+{
+  "name": "callmeback",
+  "version": "0.1.0",
+  "description": "Sport club management platform",
+  "main": "server.js",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.2",
+    "jwt-simple": "^0.5.6",
+    "luxon": "^2.3.1",
+    "moment": "^2.29.1",
+    "mongoose": "^6.1.8",
+    "nodemailer": "^6.7.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "export NODE_ENV=dev && nodemon server.js",
+    "start": "node server.js",
+    "build": "cd frontend && npm install && npm run build && rm -rf node_modules && cd .. && rm -rf node_modules"
+  },
+  "author": "Dario Busco",
+  "license": "ISC"
+}
